@@ -30,28 +30,28 @@ def gen_player_achievements(achievement: list[str]) -> set[str]:
 
 def set_generators(achievement: list[str]) -> None:
 
-    Alice: set[str] = gen_player_achievements(achievement)
-    Bob: set[str] = gen_player_achievements(achievement)
-    Charlie: set[str] = gen_player_achievements(achievement)
-    Dylan: set[str] = gen_player_achievements(achievement)
+    alice: set[str] = gen_player_achievements(achievement)
+    bob: set[str] = gen_player_achievements(achievement)
+    charlie: set[str] = gen_player_achievements(achievement)
+    dylan: set[str] = gen_player_achievements(achievement)
 
     print("=== Achievement Tracker System ===")
-    print(f"Player Alice: {Alice}")
-    print(f"Player Bob: {Bob}")
-    print(f"Player Charlie: {Charlie}")
-    print(f"Player Dylan: {Dylan}\n")
-    print(f"All distinct achievements: {Alice.union(Bob, Charlie, Dylan)}")
-    print(f"Common achievements: {Alice.intersection(Bob, Charlie, Dylan)}\n")
+    print(f"Player Alice: {alice}")
+    print(f"Player Bob: {bob}")
+    print(f"Player Charlie: {charlie}")
+    print(f"Player Dylan: {dylan}\n")
+    print(f"All distinct achievements: {alice.union(bob, charlie, dylan)}")
+    print(f"Common achievements: {alice.intersection(bob, charlie, dylan)}\n")
 
-    print(f"Only Alice has: {Alice.difference(Bob, Charlie, Dylan)}")
-    print(f"Only Bob has: {Bob.difference(Alice, Charlie, Dylan)}")
-    print(f"Only Charlie has: {Charlie.difference(Bob, Alice, Dylan)}")
-    print(f"Only Dylan has: {Dylan.difference(Bob, Charlie, Alice)}\n")
+    print(f"Only Alice has: {alice.difference(bob, charlie, dylan)}")
+    print(f"Only Bob has: {bob.difference(alice, charlie, dylan)}")
+    print(f"Only Charlie has: {charlie.difference(bob, alice, dylan)}")
+    print(f"Only Dylan has: {dylan.difference(bob, charlie, alice)}\n")
 
-    print(f"Alice is missing: {set(achievement).difference(Alice)}")
-    print(f"Bob is missing: {set(achievement).difference(Bob)}")
-    print(f"Charlie is missing: {set(achievement).difference(Charlie)}")
-    print(f"Dylan is missing: {set(achievement).difference(Dylan)}")
+    print(f"Alice is missing: {set(achievement).difference(alice)}")
+    print(f"Bob is missing: {set(achievement).difference(bob)}")
+    print(f"Charlie is missing: {set(achievement).difference(charlie)}")
+    print(f"Dylan is missing: {set(achievement).difference(dylan)}")
 
 
 if (__name__ == "__main__"):

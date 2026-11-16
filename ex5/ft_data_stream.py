@@ -3,12 +3,12 @@ import random
 
 
 def gen_event() -> typing.Generator[tuple[str, str]]:
-    Actions = ["run", "eat", "sleep", "grab", "move", "climb", "swim"]
-    Players = ["bob", "alice", "dylan", "charlie"]
-    Player_choice = random.choice(Players)
-    Actions_choice = random.choice(Actions)
+    actions = ["run", "eat", "sleep", "grab", "move", "climb", "swim"]
+    players = ["bob", "alice", "dylan", "charlie"]
+    player_choice = random.choice(players)
+    actions_choice = random.choice(actions)
 
-    yield (Player_choice, Actions_choice)
+    yield (player_choice, actions_choice)
 
 
 def consume_event(

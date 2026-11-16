@@ -7,11 +7,11 @@ if (__name__ == "__main__"):
               "ft_score_analytics.py <score1> <score2> ...")
     else:
         index: int = 1
-        scores: list[int] = []
+        scores: list[float] = []
         while (index < len(sys.argv)):
             try:
-                int(sys.argv[index])
-                scores += [int(sys.argv[index])]
+                float(sys.argv[index])
+                scores += [float(sys.argv[index])]
             except ValueError as e:
                 print(e)
             index += 1
