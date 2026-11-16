@@ -15,7 +15,9 @@ def consume_event(
     lst_tuple: list[tuple[str, str]]
 ) -> typing.Generator[tuple[str, str], None, None]:
     for i in range(10):
-        removed = lst_tuple.pop(random.randrange(len(lst_tuple)))
+        index = random.randrange(len(lst_tuple))
+        removed = lst_tuple[index]
+        del lst_tuple[index]
         yield removed
 
 

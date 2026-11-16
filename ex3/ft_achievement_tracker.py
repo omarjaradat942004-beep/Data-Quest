@@ -1,16 +1,7 @@
 import random
 
 
-def set_generator(achievement: list[str]) -> set[str]:
-    sets: set[str] = set()
-    set_size = random.randint(1, len(achievement))
-    while (len(sets) < set_size):
-        sets.add(random.choice(achievement))
-    return (sets)
-
-
-def gen_player_achievements() -> None:
-    achievement: list[str] = [
+achievement: list[str] = [
         "Crafting Genius",
         "World Savior",
         "Master Explorer",
@@ -24,14 +15,25 @@ def gen_player_achievements() -> None:
         "Unstoppable",
         "First Steps",
         "Sharp Mind",
-        "Hidden Path Finder"
+        "Hidden Path Finder",
         "Strategist"
     ]
 
-    Alice: set[str] = set_generator(achievement)
-    Bob: set[str] = set_generator(achievement)
-    Charlie: set[str] = set_generator(achievement)
-    Dylan: set[str] = set_generator(achievement)
+
+def gen_player_achievements(achievement: list[str]) -> set[str]:
+    sets: set[str] = set()
+    set_size = random.randint(1, len(achievement))
+    while (len(sets) < set_size):
+        sets.add(random.choice(achievement))
+    return (sets)
+
+
+def set_generators(achievement: list[str]) -> None:
+
+    Alice: set[str] = gen_player_achievements(achievement)
+    Bob: set[str] = gen_player_achievements(achievement)
+    Charlie: set[str] = gen_player_achievements(achievement)
+    Dylan: set[str] = gen_player_achievements(achievement)
 
     print("=== Achievement Tracker System ===")
     print(f"Player Alice: {Alice}")
@@ -53,4 +55,4 @@ def gen_player_achievements() -> None:
 
 
 if (__name__ == "__main__"):
-    gen_player_achievements()
+    set_generators(achievement)

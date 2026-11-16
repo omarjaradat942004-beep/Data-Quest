@@ -12,8 +12,8 @@ if (__name__ == "__main__"):
             try:
                 int(sys.argv[index])
                 scores += [int(sys.argv[index])]
-            except ValueError:
-                print(f"Invalid parameter: ’{sys.argv[index]}’")
+            except ValueError as e:
+                print(e)
             index += 1
         if (len(scores) == 0):
             print("No scores provided. Usage: python3"
