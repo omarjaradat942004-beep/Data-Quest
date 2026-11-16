@@ -20,6 +20,8 @@ def finding_duplicates(lst: list[int], lst2: list[str]) -> list[str]:
 
 
 def find_max(inventory: dict[str, int], lst_items: list[str]) -> str:
+    if (not lst_items):
+        return ("")
     index: int = 1
     maxi_str: str = lst_items[0]
     maxi: int = inventory[lst_items[0]]
@@ -32,6 +34,8 @@ def find_max(inventory: dict[str, int], lst_items: list[str]) -> str:
 
 
 def find_min(inventory: dict[str, int], lst_items: list[str]) -> str:
+    if (not lst_items):
+        return ("")
     index: int = 1
     mini_str: str = lst_items[0]
     mini: int = inventory[lst_items[0]]
@@ -108,10 +112,11 @@ if __name__ == "__main__":
 
         maximum: str = find_max(inventory, lst_items)
         minimum: str = find_min(inventory, lst_items)
-
-        print(f"Item most abundant: {maximum}"
-              f"with quantity {inventory[maximum]}")
-        print(f"Item least abundant: {minimum}"
-              f"with quantity {inventory[minimum]}")
+        if (maximum != ""):
+            print(f"Item most abundant: {maximum}"
+                  f"with quantity {inventory[maximum]}")
+        if (minimum != ""):
+            print(f"Item least abundant: {minimum}"
+                  f"with quantity {inventory[minimum]}")
 
         inventory.update({"magic_item": 1})
