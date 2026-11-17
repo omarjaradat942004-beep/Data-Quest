@@ -5,6 +5,7 @@ if (__name__ == "__main__"):
     print(f"Program name: {sys.argv[0]}")
     if (len(sys.argv) == 1):
         print("No arguments provided!")
+        print("Total arguments: 1")
     else:
         print(f"Arguments received: {len(sys.argv) - 1}")
         index: int = 1

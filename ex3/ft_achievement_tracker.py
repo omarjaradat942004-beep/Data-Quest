@@ -15,16 +15,16 @@ achievement: list[str] = [
         "Unstoppable",
         "First Steps",
         "Sharp Mind",
-        "Hidden Path Finder",
-        "Strategist"
+        "Hidden Path Finder"
     ]
 
 
 def gen_player_achievements(achievement: list[str]) -> set[str]:
     sets: set[str] = set()
-    set_size = random.randint(1, len(achievement))
+    new_achievement: list[str] = list(set(achievement))
+    set_size = random.randint(0, len(new_achievement))
     while (len(sets) < set_size):
-        sets.add(random.choice(achievement))
+        sets.add(random.choice(new_achievement))
     return (sets)
 
 

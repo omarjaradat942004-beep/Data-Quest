@@ -10,8 +10,10 @@ if (__name__ == "__main__"):
         scores: list[float] = []
         while (index < len(sys.argv)):
             try:
-                float(sys.argv[index])
-                scores += [float(sys.argv[index])]
+                num: float = float(sys.argv[index])
+                if (num == -0.0):
+                    num = 0.0
+                scores += [num]
             except ValueError as e:
                 print(e)
             index += 1

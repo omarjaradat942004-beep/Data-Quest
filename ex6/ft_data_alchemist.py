@@ -14,8 +14,8 @@ if __name__ == "__main__":
         name for name in names if name[0].isupper()
     ]
 
-    dict_all_cap: dict[str, int] = {
-        key.capitalize(): random.randint(0, 1000)
+    dict_all_cap: dict[str, float] = {
+        key.capitalize(): random.uniform(0, 1000)
         for key in names
     }
 
@@ -23,9 +23,9 @@ if __name__ == "__main__":
         sum(dict_all_cap.values()) / len(dict_all_cap), 2
     )
 
-    dict_high_sco: dict[str, int] = {
-        key.capitalize(): random.randint(
-            int(score_average + 1), 10000
+    dict_high_sco: dict[str, float] = {
+        key.capitalize(): random.uniform(
+            score_average + 1, 10000
         )
         for key in names
     }

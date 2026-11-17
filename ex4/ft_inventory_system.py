@@ -3,20 +3,22 @@ import sys
 
 def finding_duplicates(lst: list[int], lst2: list[str]) -> list[str]:
     index: int = 0
-    index2: int = 1
 
     while index < len(lst2):
-        index2 = index + 1
+        index2: int = index + 1
+
         while index2 < len(lst2):
             if lst2[index][:lst[index]] == lst2[index2][:lst[index2]]:
+                print(f"Redundant item '{lst2[index][:lst[index]]}'"
+                      " - discarding")
                 del lst2[index2]
                 del lst[index2]
-                print(f"Redundant item '{lst2[index][:lst[index]]}"
-                      "' - discarding")
             else:
                 index2 += 1
+
         index += 1
-    return (lst2)
+
+    return lst2
 
 
 def find_max(inventory: dict[str, int], lst_items: list[str]) -> str:
@@ -65,7 +67,6 @@ if __name__ == "__main__":
         while (index < lst_size):
             index2 = 0
             comma_pos = -1
-
             while (index2 < len(sys.argv[index])):
                 if (sys.argv[index][index2] == ':'):
                     comma_pos = index2
@@ -114,9 +115,9 @@ if __name__ == "__main__":
         minimum: str = find_min(inventory, lst_items)
         if (maximum != ""):
             print(f"Item most abundant: {maximum}"
-                  f"with quantity {inventory[maximum]}")
+                  f" with quantity {inventory[maximum]}")
         if (minimum != ""):
             print(f"Item least abundant: {minimum}"
-                  f"with quantity {inventory[minimum]}")
+                  f" with quantity {inventory[minimum]}")
 
         inventory.update({"magic_item": 1})
