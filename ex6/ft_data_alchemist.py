@@ -15,7 +15,7 @@ if __name__ == "__main__":
     ]
 
     dict_all_cap: dict[str, float] = {
-        key.capitalize(): random.uniform(0, 1000)
+        key.capitalize(): round(random.uniform(0, 1000), 2)
         for key in names
     }
 
@@ -24,10 +24,9 @@ if __name__ == "__main__":
     )
 
     dict_high_sco: dict[str, float] = {
-        key.capitalize(): random.uniform(
-            score_average + 1, 10000
-        )
-        for key in names
+        key: value
+        for key, value in dict_all_cap.items()
+        if value > score_average
     }
 
     print(f"Initial list of players: {names}")

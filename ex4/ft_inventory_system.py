@@ -104,10 +104,14 @@ if __name__ == "__main__":
 
         index = 0
         while (index < len(lst_items)):
-            percentage = round(
-                inventory[lst_items[index]] /
-                sum(inventory.values()) * 100, 1
-            )
+            total: int = sum(inventory.values())
+            percentage: float
+            if (total == 0):
+                percentage = 0
+            else:
+                percentage = round(
+                    inventory[lst_items[index]] / total * 100, 1
+                )
             print(f"Item {lst_items[index]} represents {percentage}%")
             index += 1
 
