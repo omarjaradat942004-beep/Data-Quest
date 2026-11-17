@@ -107,7 +107,7 @@ if __name__ == "__main__":
             total: int = sum(inventory.values())
             percentage: float
             if (total == 0):
-                percentage = 0
+                percentage = 0.0
             else:
                 percentage = round(
                     inventory[lst_items[index]] / total * 100, 1
